@@ -29,11 +29,11 @@ const SearchDropdown = ({
     <div
       className={
         isOpen
-          ? 'fixed inset-0 block w-full bg-white font-display transition duration-500 ease-out transform'
-          : 'fixed inset-0 block w-full bg-white font-display transition duration-500 ease-out transform -translate-y-full'
+          ? 'py-6 fixed inset-0 block w-full bg-white font-display transition duration-500 ease-out transform md:inset-x-0 md:top-0 md:bottom-auto'
+          : 'py-6 fixed inset-0 block w-full bg-white font-display transition duration-500 ease-out transform -translate-y-full'
       }
     >
-      <div className='flex px-4 py-6 items-center justify-between'>
+      <div className='flex px-4 items-center justify-between md:hidden'>
         <div className='font-bold text-sm'>Edit your search</div>
         <div>
           <button
@@ -60,8 +60,8 @@ const SearchDropdown = ({
         </div>
       </div>
 
-      <div className='mx-4 rounded-lg border shadow'>
-        <div className='border-b'>
+      <div className='mt-4 mx-4 rounded-lg border shadow md:flex md:justify-between'>
+        <div className='border-b md:border-none md:w-1/3'>
           <button
             onClick={() => {
               setLocationIsOpen(true);
@@ -76,7 +76,7 @@ const SearchDropdown = ({
             <div className='text-gray-800'>{searchLocation}, Finland</div>
           </button>
         </div>
-        <div>
+        <div className='md:w-1/3 md:border-l'>
           <button
             onClick={() => {
               setGuestsIsOpen(true);
@@ -101,6 +101,37 @@ const SearchDropdown = ({
                 ? currentAdultGuests + currentChildGuests + ' guest'
                 : currentAdultGuests + currentChildGuests + ' guests'}
             </div>
+          </button>
+        </div>
+        <div className='hidden justify-center md:flex md:w-1/3 md:border-l'>
+          <button
+            tabIndex={!isOpen ? -1 : undefined}
+            onClick={() => {
+              setIsOpen(false);
+              if (locationIsOpen) {
+                changeLocation(searchLocation);
+              } else if (guestsIsOpen) {
+                changeChildGuests(currentChildGuests);
+                changeAdultGuests(currentAdultGuests);
+              }
+            }}
+            className='flex items-center justify-center py-3 px-7 text-white bg-red-400 rounded-2xl focus:outline-none focus:ring-1 ring-gray-700'
+          >
+            <div className='pr-2'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+                className='h-5 w-5'
+              >
+                <path
+                  fillRule='evenodd'
+                  d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z'
+                  clipRule='evenodd'
+                />
+              </svg>
+            </div>
+            <div>Search</div>
           </button>
         </div>
       </div>
@@ -232,7 +263,7 @@ const SearchDropdown = ({
         </div>
       )}
 
-      <div className='flex justify-center w-full absolute bottom-0 mb-7'>
+      <div className='flex justify-center w-full absolute bottom-0 mb-7 md:hidden'>
         <button
           tabIndex={!isOpen ? -1 : undefined}
           onClick={() => {

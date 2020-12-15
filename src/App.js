@@ -12,8 +12,10 @@ const App = () => {
 
   return (
     <div className='text-gray-900 font-body bg-gray-50 min-h-screen'>
-      <Header locations={locations} />
-      <main></main>
+      <div className='md:container md:mx-auto'>
+        <Header locations={locations} />
+        <main></main>
+      </div>
     </div>
   );
 };
