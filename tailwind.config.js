@@ -6,7 +6,11 @@ module.exports = {
       body: ['Montserrat', 'system-ui'],
       display: ['Mulish', 'system-ui'],
     },
-    extend: {},
+    extend: {
+      spacing: {
+        112: '28rem',
+      },
+    },
   },
   variants: {
     extend: {},

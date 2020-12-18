@@ -17,6 +17,7 @@ const SearchBar = ({ location, locations, adultGuests, childGuests }) => {
   const handleEscape = (e) => {
     if (e.key === 'Esc' || e.key === 'Escape') {
       setDropdownIsOpen(false);
+      // unfocus SearchBar button
       document.activeElement.blur();
     }
   };
@@ -101,7 +102,6 @@ const SearchBar = ({ location, locations, adultGuests, childGuests }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     location: state.location,
     childGuests: state.guests.children,
