@@ -84,7 +84,7 @@ const SearchBar = ({ location, locations, adultGuests, childGuests }) => {
         dropdownIsOpen && (
           <button
             onClick={() => setDropdownIsOpen(false)}
-            className='fixed inset-0 w-full h-full bg-black opacity-40 cursor-default'
+            className='z-10 fixed inset-0 w-full h-full bg-black opacity-40 cursor-default'
           ></button>
         )
       }

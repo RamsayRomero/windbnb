@@ -29,7 +29,7 @@ const SearchDropdown = ({
     <div
       className={
         isOpen
-          ? 'py-6 fixed inset-0 block w-full bg-white font-display transition duration-500 ease-out transform md:inset-x-0 md:top-0 md:bottom-auto md:h-112'
+          ? 'z-20 py-6 fixed inset-0 block w-full bg-white font-display transition duration-500 ease-out transform md:inset-x-0 md:top-0 md:bottom-auto md:h-112'
           : 'py-6 fixed inset-0 block w-full bg-white font-display transition duration-500 ease-out transform -translate-y-full'
       }
     >
@@ -266,103 +266,6 @@ const SearchDropdown = ({
           </ul>
         </div>
       )}
-
-      {/* {guestsIsOpen && (
-        <div className='mt-8'>
-          <div className='px-10'>
-            <div className='font-bold'>Adults</div>
-            <div className='text-gray-500'>Ages 13 or above</div>
-            <div className='flex items-center mt-4'>
-              <button
-                onClick={() => {
-                  currentAdultGuests > 0 &&
-                    setCurrentAdultGuests(currentAdultGuests - 1);
-                }}
-                tabIndex={!isOpen ? -1 : undefined}
-                className='p-2 block border border-gray-700 text-gray-700 rounded focus:outline-none focus:ring-1 ring-inset ring-gray-700'
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  className='w-5 h-5'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
-                    clipRule='evenodd'
-                  />
-                </svg>
-              </button>
-              <div className='px-2 font-bold'>{currentAdultGuests}</div>
-              <button
-                onClick={() => setCurrentAdultGuests(currentAdultGuests + 1)}
-                tabIndex={!isOpen ? -1 : undefined}
-                className='p-2 block border border-gray-700 text-gray-700 rounded focus:outline-none focus:ring-1 ring-inset ring-gray-700'
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  className='w-5 h-5'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z'
-                    clipRule='evenodd'
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div className='px-10 mt-8'>
-            <div className='font-bold'>Children</div>
-            <div className='text-gray-500'>Ages 2 through 12</div>
-            <div className='flex items-center mt-4'>
-              <button
-                onClick={() => {
-                  currentChildGuests > 0 &&
-                    setCurrentChildGuests(currentChildGuests - 1);
-                }}
-                tabIndex={!isOpen ? -1 : undefined}
-                className='p-2 block border border-gray-700 text-gray-700 rounded focus:outline-none focus:ring-1 ring-inset ring-gray-700'
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  className='w-5 h-5'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
-                    clipRule='evenodd'
-                  />
-                </svg>
-              </button>
-              <div className='px-2 font-bold'>{currentChildGuests}</div>
-              <button
-                onClick={() => setCurrentChildGuests(currentChildGuests + 1)}
-                tabIndex={!isOpen ? -1 : undefined}
-                className='p-2 block border border-gray-700 text-gray-700 rounded focus:outline-none focus:ring-1 ring-inset ring-gray-700'
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  className='w-5 h-5'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z'
-                    clipRule='evenodd'
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      )} */}
 
       <div className='flex justify-center w-full absolute bottom-0 mb-7 md:hidden'>
         <button
