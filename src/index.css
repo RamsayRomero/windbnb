@@ -3,3 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dropdown-enter {
+  transform: translateY(-110%);
+}
+
+.dropdown-enter-active {
+  transform: translateY(0%);
+  transition: all 0.5s ease-out;
+}
+
+.dropdown-exit-active {
+  transform: translateY(-110%);
+  transition: all 0.5s ease-out;
+}

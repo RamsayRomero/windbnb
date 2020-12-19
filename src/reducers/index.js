@@ -5,7 +5,7 @@ const initialGuests = {
   children: 0,
 };
 
-const initialLocation = 'Helsinki';
+const initialLocation = 'Finland';
 
 const guestReducer = (guests = initialGuests, action) => {
   switch (action.type) {

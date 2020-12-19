@@ -35,7 +35,7 @@ const SearchBar = ({ location, locations, adultGuests, childGuests }) => {
             }}
             className='block py-3 w-full rounded-xl  focus:outline-none focus:ring-1 ring-inset ring-gray-700'
           >
-            {location}, Finland
+            {location === 'Finland' ? location : `${location}, Finland`}
           </button>
         </div>
         <div className='flex-1 border-r'>
